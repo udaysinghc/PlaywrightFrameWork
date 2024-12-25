@@ -27,7 +27,7 @@ test.afterEach(async () => {
     localStorage.clear();
     sessionStorage.clear();
   });
-  await browser.close()
+  // await browser.close()
 });
 
 test.afterAll(async () => {

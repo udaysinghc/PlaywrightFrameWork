@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","30187","Phone Module","chromium","Tue Dec 24 14:05:51 IST 2024","broken","Tue Dec 24 14:06:21 IST 2024","Home Page Test","HomePage.spec.js","",""
+"","5091","Laptop Module","chromium","Tue Dec 24 14:06:25 IST 2024","passed","Tue Dec 24 14:06:30 IST 2024","Home Page Test","HomePage.spec.js","",""
+"","3442","login","chromium","Tue Dec 24 14:06:38 IST 2024","passed","Tue Dec 24 14:06:41 IST 2024","descibe test","LoginPage.spec.js","",""
+"","29463","Add To Cart","chromium","Tue Dec 24 14:05:19 IST 2024","passed","Tue Dec 24 14:05:49 IST 2024","","AddTOCart.spec.js","",""
+"","4923","Monitor Module","chromium","Tue Dec 24 14:06:31 IST 2024","passed","Tue Dec 24 14:06:36 IST 2024","Home Page Test","HomePage.spec.js","",""

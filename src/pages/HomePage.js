@@ -39,4 +39,19 @@ class HomePage{
         console.log(numberOfLaptops.length)  
     }
 
+    async selectItem(mobileName)
+    {
+        const numberOfItem=await this.page.$$(this.countOfItems)
+
+        for(const val of numberOfItem)
+        {
+            let itemName=await val.textContent()
+            console.log(itemName)
+            if(itemName.includes(mobileName))
+            {
+                await val.click()
+                break;
+            }
+        }
+    }
 }

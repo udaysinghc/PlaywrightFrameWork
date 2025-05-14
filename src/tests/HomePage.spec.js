@@ -10,6 +10,7 @@ test.describe('Home Page Test', async()=>{
 
         const homePage=new HomePage(page)
         await homePage.PhonesCount()
+    
     })
 
     test('Laptop Module', async()=>{

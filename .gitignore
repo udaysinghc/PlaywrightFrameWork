@@ -1,5 +1,29 @@
-node_modules/
-/test-results/
-/playwright-report/
+# Playwright specific
+test-results/
+playwright-report/
+playwright/.cache/
 /blob-report/
-/playwright/.cache/
+/artifacts/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Test artifacts
+screenshots/
+videos/
+
+# System files
+.DS_Store
+Thumbs.db

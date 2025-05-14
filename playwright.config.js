@@ -1,5 +1,9 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+const { getEnvData } = require('./src/utils/envLoader');
+
+const env = process.env.TEST_ENV || 'qa';
+const envData = getEnvData(env);
 
 /**
  * Read environment variables from file.
@@ -13,11 +17,11 @@ const { defineConfig, devices } = require('@playwright/test');
 module.exports = defineConfig({
   testDir: './src/tests',
   /* Run tests in files in parallel */
-  fullyParallel: false,
+  fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
   forbidOnly: !!process.env.CI,
   /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 1 : 0,
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -27,31 +31,33 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://127.0.0.1:3000',
 
+    // baseURL: envData.baseURL,
+    // baseURL:getEnvironmentConfig().baseURL,
+
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
-    screenshot:"on",
-    video:"on",
+    screenshot:"only-on-failure",
+    video:"retain-on-failure",
+
   },
 
+  
   /* Configure projects for major browsers */
   projects: [
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'],
-        viewport:{width:1536, height:864}
+        // viewport:{width:1536, height:864}
        },
+       retries: 1
     },
 
     {
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
-    },
-
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
-
+      retries:1
+    }
+    
     /* Test against mobile viewports. */
     // {
     //   name: 'Mobile Chrome',

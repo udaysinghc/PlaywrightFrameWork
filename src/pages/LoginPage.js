@@ -18,6 +18,6 @@ class LoginPage{
         await this.page.fill(this.usernameInput,username)
         await this.page.fill(this.passwordInput,password)
         await this.page.click(this.loginButton)
-        // await this.page.waitForTimeout(3000)
+        
     }
 }
